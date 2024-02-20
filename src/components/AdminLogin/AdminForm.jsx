@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 import { Context } from "@/provider/ContextProvider";
 const AdminForm = () => {
-  const {setTokenInLocalStorage} = useContext(Context);
+  const {setTokenInLocalStorage,setUser} = useContext(Context);
   const router = useRouter();
   const [formData, setFormData] = useState({
     mobile_number: "",
@@ -38,7 +38,9 @@ const AdminForm = () => {
           text: "Successfully Login",
           icon: "success",
         });
+
         // console.log(data.token.access)
+        setUser(data.user);
         setTokenInLocalStorage(data.token.access);
         // Redirect to the dashboard or handle authentication token
         router.push(`/dashboard_admin`);

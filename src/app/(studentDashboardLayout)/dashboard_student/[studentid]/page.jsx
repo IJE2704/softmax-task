@@ -6,7 +6,7 @@ import { fetchCourse } from "@/utilities/getCourse";
 import { findStudentById } from "@/utilities/getStudent";
 import React, { useContext, useEffect } from "react";
 
-import { PiStudent } from "react-icons/pi";
+
 
 const Page = ({ params }) => {
   const { setUser, setStudent,user,token,setCourses,courses} = useContext(Context);

@@ -4,7 +4,8 @@ import React, { useContext, useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 
 const Pagination = ({ onClose }) => {
-  const {student } = useContext(Context);
+  const {user } = useContext(Context);
+  console.log(user)
   // console.log(student)
   // Your pagination component content here
   return (
@@ -12,8 +13,8 @@ const Pagination = ({ onClose }) => {
       <div className="bg-white p-8 rounded-lg shadow-lg min-h-[300px] min-w-[500px]">
        <div className="text-right"> <button className="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600" onClick={onClose}>Close</button></div>
         <div className="mt-20 flex flex-col justify-center items-center">
-          <h1 className="text-2xl">Name: {student?.name}</h1>
-          <h1 className="text-2xl">Phone:{student?.mobile_number}</h1>
+          <h1 className="text-2xl">Name: {user?.name}</h1>
+          <h1 className="text-2xl">Phone:{user?.mobile_number}</h1>
         </div>
       </div>
     </div>
@@ -23,7 +24,7 @@ const Pagination = ({ onClose }) => {
 const AdminDashboardHeader = () => {
   const { selectedMenu, user, student } = useContext(Context);
   const [paginationOpen, setPaginationOpen] = useState(false);
-
+  console.log(user)
   const handleTogglePagination = () => {
     setPaginationOpen(!paginationOpen);
   };
@@ -50,7 +51,7 @@ const AdminDashboardHeader = () => {
           onClick={handleTogglePagination}
           style={{ cursor: "pointer" }}
         />
-        <h1>{student?.name}</h1>
+        <h1>{user?.name}</h1>
       </div>
       {paginationOpen && (
         <div className="pagination-overlay" onClick={handleClosePagination}>

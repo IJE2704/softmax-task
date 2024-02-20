@@ -21,7 +21,7 @@ const StudentDashboardMenu = () => {
         <h1 className="font-bold text-[#20B486]">SOFTMAX</h1>
       </div></Link>
       <div className="mt-16 space-y-3 pr-4">
-        <Link href={`/dashboard_student/${user}`}>
+        <Link href={`/dashboard_student`}>
           <div
             onClick={() => setSelectedMenu("Dashboard")}
             className={`flex justify-start pl-[150px] items-center  gap-4 text-base md:text-xl lg:text-2xl w-full  hover:bg-[#13674c] border py-4 rounded-br-lg rounded-tr-lg ${

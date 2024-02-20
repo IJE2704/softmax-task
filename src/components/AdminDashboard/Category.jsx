@@ -9,22 +9,34 @@ const Modal = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const {token} = useContext(Context);
   // console.log(token)
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   const handleCreateCategory = async () => {
     // console.log(categoryName)
     // console.log(categoryDescription)
+    console.log(formData)
+    console.log(token)
     try {
       setIsLoading(true);
+      console.log('h')
       const response = await fetch('https://softmaxshop.com/user/categories', {
         method: 'POST',
+        
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({
-          name: categoryName,
-          description: categoryDescription
-        })
+        body: JSON.stringify(formData)
       });
+      console.log(response)
       // console.log(response.status)
       if (!response.ok) {
         throw new Error('Failed to create category');
@@ -50,15 +62,19 @@ const Modal = ({ isOpen, onClose }) => {
         <h1 className="text-3xl font-bold mb-4">Create Category</h1>
         <input
           type="text"
+          id='name'
+          name='name'
           placeholder="Category Name"
-          value={categoryName}
-          onChange={(e) => setCategoryName(e.target.value)}
+          value={formData.name}
+          onChange={handleChange}
           className="border border-gray-300 rounded-md px-3 py-2 mb-4 w-full"
         />
         <textarea
           placeholder="Category Description"
-          value={categoryDescription}
-          onChange={(e) => setCategoryDescription(e.target.value)}
+          id='description'
+          name='description'
+          value={formData.description}
+          onChange={handleChange}
           className="border border-gray-300 rounded-md px-3 py-2 mb-4 w-full resize-none"
           rows={4}
         />

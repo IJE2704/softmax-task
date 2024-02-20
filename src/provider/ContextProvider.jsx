@@ -10,6 +10,8 @@ const ContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [token, setToken] = useState("");
   const [selectedMenu, setSelectedMenu] = useState("Dashboard");
+  const [selectedAdminMenu, setSelectedAdminMenu] = useState("Dashboard");
+  const [selectedTeacherMenu, setSelectedTeacherMenu] = useState("Dashboard");
   const [student, setStudent] = useState({});
   const [courses, setCourses] = useState([]);
   const [admin, setAdmin] = useState({});
@@ -48,18 +50,7 @@ const ContextProvider = ({ children }) => {
     fetchData();
   }, [user]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      // const token = getTokenFromLocalStorage();
-      // console.log(token)
-      console.log("1");
-      const fetchedCourses = await fetchCourse(token);
-      console.log(fetchedCourses);
-      setCourses(fetchedCourses);
-    };
 
-    fetchData();
-  }, [user]);
 
   const info = {
     user,
@@ -68,6 +59,10 @@ const ContextProvider = ({ children }) => {
     setToken,
     selectedMenu,
     setSelectedMenu,
+    selectedAdminMenu,
+    setSelectedAdminMenu,
+    selectedTeacherMenu,
+    setSelectedTeacherMenu,
     setStudent,
     student,
     courses,
