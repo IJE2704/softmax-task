@@ -17,6 +17,7 @@ const AdminForm = () => {
   });
 
   const handleChange = (e) => {
+    let flag=1;
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -32,6 +33,7 @@ const AdminForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
+      flag=2;
       if (response.ok) {
         Swal.fire({
           title: "Congratulation!",
@@ -50,6 +52,13 @@ const AdminForm = () => {
       }
     } catch (error) {
       console.error("Error logging in:", error);
+    }
+    if(flag===1){
+      Swal.fire({
+        title: "Try again!",
+        text: "Invaild number or password",
+        icon: "error",
+      });
     }
   };
   return (

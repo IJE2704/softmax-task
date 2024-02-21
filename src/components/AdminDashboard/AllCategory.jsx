@@ -22,7 +22,7 @@ const AllCategory = () => {
   // Logic to get current categories based on pagination
   const indexOfLastCategory = currentPage * categoryPerPage;
   const indexOfFirstCategory = indexOfLastCategory - categoryPerPage;
-  const currentCategories = allCategory.slice(indexOfFirstCategory, indexOfLastCategory);
+  const currentCategories = allCategory?.slice(indexOfFirstCategory, indexOfLastCategory);
 
   const totalPages = Math.ceil(allCategory.length / categoryPerPage);
 

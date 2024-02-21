@@ -18,11 +18,13 @@ const TeacherLoginForm = () => {
   });
 
   const handleChange = (e) => {
+   
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
+    let flag=1;
     e.preventDefault();
     // console.log('h')
     try {
@@ -35,6 +37,7 @@ const TeacherLoginForm = () => {
       });
       console.log(response.status)
       const data = await response.json();
+      flag=2;
       console.log(data)
       if (response.ok) {
         Swal.fire({
@@ -53,6 +56,13 @@ const TeacherLoginForm = () => {
       }
     } catch (error) {
       console.error("Error logging in:", error);
+    }
+    if(flag===1){
+      Swal.fire({
+        title: "Try again!",
+        text: "Invaild number or password",
+        icon: "error",
+      });
     }
   };
 
