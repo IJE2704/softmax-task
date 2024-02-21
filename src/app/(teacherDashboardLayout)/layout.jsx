@@ -11,11 +11,11 @@ const layout = ({ children }) => {
       <div className="col-span-1">
         <TeacherDashboardMenu></TeacherDashboardMenu>
       </div>
-      <div className="col-span-3 grid grid-rows-4">
-        <div className="row-span-1 h-[150px]">
+      <div className="col-span-3 grid grid-rows-47">
+        <div className="row-span-1 ">
           <TeacherDashboardHeader></TeacherDashboardHeader>
         </div>
-        <div className="row-span-3 ">{children}</div>
+        <div className="row-span-6 ">{children}</div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 export const getTeacherCourses = async (id,token) =>{
+  console.log(id)
   console.log(token)
   const response = await fetch(`https://softmaxshop.com/user/teacher/${id}/courses/`,{
     method:"GET",

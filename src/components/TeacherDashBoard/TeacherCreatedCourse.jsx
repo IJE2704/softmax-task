@@ -6,6 +6,7 @@ import React, { useContext, useEffect, useState } from 'react';
 const TeacherCreatedCourse = () => {
   const [teacherCreatedCourses, setTeacherCreatedCourses] = useState({});
   const {user,token} = useContext(Context);
+  console.log(user)
   useEffect(()=>{
     const teacherCourseData = async()=>{
       const data = await getTeacherCourses(user.id,token);

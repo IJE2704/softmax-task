@@ -8,11 +8,11 @@ const layout = ({ children }) => {
       <div className="col-span-1">
         <h1><AdminDashBoardMenu></AdminDashBoardMenu></h1>
       </div>
-      <div className="col-span-3 grid grid-rows-4">
-        <div className="row-span-1 h-[150px]">
+      <div className="col-span-3 grid grid-rows-7 h-screen">
+        <div className="row-span-1">
           <AdminDashboardHeader></AdminDashboardHeader>
         </div>
-        <div className="row-span-3 overflow-auto">{children}</div>
+        <div className="row-span-6">{children}</div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 "use client"
 import { Context } from '@/provider/ContextProvider';
+import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 
 
@@ -110,9 +111,10 @@ const Category = () => {
       <div onClick={openModal} className='w-1/2 bg-[#CFA9F4] rounded mt-10 shadow-xl h-[300px] flex justify-center items-center hover:scale-110 mx-20 cursor-pointer'>
         <h1 className='text-3xl font-bold'>Create Category</h1>
       </div>
+      <Link href="/all_category">
       <div className='w-1/2 bg-[#B2C9F6] rounded mt-10 shadow-xl h-[300px] flex justify-center items-center hover:scale-110 mx-20'>
         <h1 className='text-3xl font-bold'>See All Category</h1>
-      </div>
+      </div></Link>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
