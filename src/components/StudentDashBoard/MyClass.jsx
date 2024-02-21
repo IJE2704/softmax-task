@@ -9,17 +9,19 @@ const MyClass = () => {
   useEffect(()=>{
     console.log(student)
     const fetchData = async()=>{
-      const enrolled = await getEnrolledCourse(student.user,token);
+      const enrolled = await getEnrolledCourse(student.id,token);
       console.log(enrolled)
-      setEnrolledCourse(enrolled);
+      setEnrolledCourse(enrolled.student_courses);
     }
     fetchData();
   },[student])
   return (
     <div>
-      {
-        enrolledCourse.map(course=><h1 key={course.id}>{course.id}</h1>)
-      }
+      {enrolledCourse.length > 0 ? (
+        enrolledCourse.map(course => <h1 key={course.id}>{course.id}</h1>)
+      ) : (
+        <h1>No enrolled courses found</h1>
+      )}
       <h1>enrolled</h1>
     </div>
   );

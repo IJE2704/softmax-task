@@ -46,6 +46,7 @@ const StudentDashBoardHeader = () => {
       </div>
       <div className="flex flex-col justify-center items-center">
         <FaRegUser
+        color="#E84C1F"
           size={40}
           onClick={handleTogglePagination}
           style={{ cursor: "pointer" }}

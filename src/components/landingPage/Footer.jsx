@@ -44,7 +44,7 @@ const Footer = () => {
           />
         </div>
         <button className='px-[24px] py-[10px] bg-[#20B486] hover:bg-[#16674d] rounded text-white'>Subscribe</button>
-      </div>
+      </div><button className='px-[24px] py-[10px] bg-[#E84C1F] hover:bg-[#16674d] rounded text-white'>Teacher Request</button>
     </div>
   );
 };

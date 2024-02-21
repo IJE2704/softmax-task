@@ -19,8 +19,8 @@ const Navbar = () => {
           <Image
             className='hover:scale-110'
             src={softmaxLogo}
-            width={50}
-            height={50}
+            width={70}
+            height={70}
             alt='logo'
           ></Image>
         </a>

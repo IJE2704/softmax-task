@@ -25,8 +25,11 @@ const LoginForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    let flag = 1;
+    console.log('first')
     e.preventDefault();
     try {
+      console.log('2')
       const response = await fetch("https://softmaxshop.com/user/login/", {
         method: "POST",
         headers: {
@@ -35,6 +38,8 @@ const LoginForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
+   console.log('3')
+   flag = 2;
       if (response.ok) {
         Swal.fire({
           title: "Congratulation!",
@@ -51,11 +56,23 @@ const LoginForm = () => {
         // Redirect to the dashboard or handle authentication token
         router.push(`/dashboard_student/`);
       } else {
+        Swal.fire({
+          title: "Try again!",
+          text: "Invaild number or password",
+          icon: "error",
+        });
         console.error("Login failed:", data);
         // Handle login failure, show error message, etc.
       }
     } catch (error) {
       console.error("Error logging in:", error);
+    }
+    if(flag===1){
+      Swal.fire({
+        title: "Try again!",
+        text: "Invaild number or password",
+        icon: "error",
+      });
     }
   };
 
