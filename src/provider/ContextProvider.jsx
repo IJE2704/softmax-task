@@ -1,4 +1,5 @@
 "use client";
+import { getAllCategory } from "@/utilities/getAllCategory";
 import { fetchCourse } from "@/utilities/getCourse";
 import { getUserStudent } from "@/utilities/getStudent";
 import { getTeacherRequest } from "@/utilities/getTeacherRequest";
@@ -18,14 +19,16 @@ const ContextProvider = ({ children }) => {
   const [request, setRequest] = useState([]);
   const [singleTeacher,setSingleTeacher] = useState({});
   const [teacherCreatedCourses, setTeacherCreatedCourses] = useState([]);
+  const [allCategory,setAllCategory] = useState([]);
 
-  // const setTokenInLocalStorage = (t) => {
-  //   localStorage.setItem("token", t);
-  // };
-
-  // const getTokenFromLocalStorage = () => {
-  //   return localStorage.getItem("token");
-  // };
+  useEffect(()=>{
+    const getData = async ()=>{
+      const data = await getAllCategory(token);
+      console.log(data)
+      setAllCategory(data);
+    }
+    getData();
+  },[token])
 
   useEffect(()=>{
 
@@ -76,7 +79,8 @@ const ContextProvider = ({ children }) => {
     singleTeacher,
     setSingleTeacher,
     teacherCreatedCourses,
-    setTeacherCreatedCourses
+    setTeacherCreatedCourses,
+    allCategory
   };
   return <Context.Provider value={info}>{children}</Context.Provider>;
 };
