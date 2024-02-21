@@ -43,13 +43,8 @@ const TeacherLoginForm = () => {
           icon: "success",
         });
         // console.log(data.token.access)
-        setUser(data.user);
-        const studentData = await getUserStudent(data.user.id);
-        console.log(studentData);
-        setStudent(studentData.student);
-        console.log(studentData.student.id);
-        // console.log(data.token.access)
         setToken(data.token.access);
+        setUser(data.user);
         // Redirect to the dashboard or handle authentication token
         router.push(`/dashboard_teacher`);
       } else {
