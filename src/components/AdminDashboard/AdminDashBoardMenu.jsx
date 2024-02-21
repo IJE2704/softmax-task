@@ -33,18 +33,18 @@ const AdminDashBoardMenu = () => {
         </Link>
         <Link href='/category_admin'>
         <div
-          onClick={() => setSelectedAdminMenu("Courses")}
+          onClick={() => setSelectedAdminMenu("Category")}
           className={`flex justify-start pl-[150px] items-center gap-4 text-base md:text-xl lg:text-2xl w-full  hover:bg-[#F5F5F4] border py-4 rounded-br-lg rounded-tr-lg ${
-            selectedAdminMenu === "Courses" ? "bg-[#F5F5F4] " : ""
+            selectedAdminMenu === "Category" ? "bg-[#F5F5F4] " : ""
           }`}
         >
           <FaBookOpen /> <h1>Category</h1>
         </div></Link>
         <Link href='/courses_admin'>
         <div
-          onClick={() => setSelectedAdminMenu("My Class")}
+          onClick={() => setSelectedAdminMenu("Courses")}
           className={`flex justify-start pl-[150px] items-center gap-4 text-base md:text-xl lg:text-2xl w-full  hover:bg-[#F5F5F4] border py-4 rounded-br-lg rounded-tr-lg ${
-            selectedAdminMenu === "My Class" ? "bg-[#F5F5F4] " : ""
+            selectedAdminMenu === "Courses" ? "bg-[#F5F5F4] " : ""
           }`}
         >
           <SiGoogleclassroom /> <h1>Courses</h1>
@@ -65,6 +65,9 @@ const AdminDashBoardMenu = () => {
         >
           <FaChalkboardTeacher /> <h1>Teachers</h1>
         </div></Link>
+      </div>
+      <div className="flex flex-col justify-center items-center mt-[80%]">
+        <Link href='/'><button className='px-[24px] py-[10px] bg-[#E84C1F] hover:bg-[#16674d] rounded text-white'>Logout</button></Link>
       </div>
     </div>
   );

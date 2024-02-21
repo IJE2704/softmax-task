@@ -66,6 +66,9 @@ const TeacherDashboardMenu = () => {
           <FaChalkboardTeacher /> <h1>Students</h1>
         </div></Link>
       </div>
+      <div className="flex flex-col justify-center items-center mt-[80%]">
+        <Link href='/'><button className='px-[24px] py-[10px] bg-[#E84C1F] hover:bg-[#16674d] rounded text-white'>Logout</button></Link>
+      </div>
     </div>
   );
 };

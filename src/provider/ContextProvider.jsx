@@ -16,6 +16,8 @@ const ContextProvider = ({ children }) => {
   const [courses, setCourses] = useState([]);
   const [admin, setAdmin] = useState({});
   const [request, setRequest] = useState([]);
+  const [singleTeacher,setSingleTeacher] = useState({});
+  const [teacherCreatedCourses, setTeacherCreatedCourses] = useState([]);
 
   const setTokenInLocalStorage = (t) => {
     localStorage.setItem("token", t);
@@ -71,7 +73,11 @@ const ContextProvider = ({ children }) => {
     admin,
     setAdmin,
     request,
-    setRequest
+    setRequest,
+    singleTeacher,
+    setSingleTeacher,
+    teacherCreatedCourses,
+    setTeacherCreatedCourses
   };
   return <Context.Provider value={info}>{children}</Context.Provider>;
 };

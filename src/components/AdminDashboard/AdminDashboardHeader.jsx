@@ -22,7 +22,7 @@ const Pagination = ({ onClose }) => {
 };
 
 const AdminDashboardHeader = () => {
-  const { selectedMenu, user, student } = useContext(Context);
+  const { selectedAdminMenu, user, student } = useContext(Context);
   const [paginationOpen, setPaginationOpen] = useState(false);
   console.log(user)
   const handleTogglePagination = () => {
@@ -36,7 +36,7 @@ const AdminDashboardHeader = () => {
   return (
     <div className="w-full h-full bg-[#ECC091] shadow-xl rounded-bl-lg flex justify-between items-center px-5 relative">
       <div>
-        <h1 className="text-xl lg:text-4xl font-bold">{selectedMenu}</h1>
+        <h1 className="text-xl lg:text-4xl font-bold">{selectedAdminMenu}</h1>
       </div>
       <div>
         <input
