@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 import { Content } from "next/font/google";
 import { Context } from "@/provider/ContextProvider";
 import { fetchData } from "@/utilities/getuser";
+import { getUserStudent } from "@/utilities/getStudent";
 
 const RegistrationForm = () => {
   const {setUser,setToken,setStudent} = useContext(Context);
@@ -46,18 +47,14 @@ const RegistrationForm = () => {
           text: "Successfully Registration",
           icon: "success"
         });
-        const users = await fetchData();
-        const user = users.filter(
-          (d) => d.mobile_number === formData.mobile_number
-        );
-        const userInfo = {
-          id:user[0].id,
-          name:user[0].name,
-          mobile_number:user[0].mobile_number
-        }
-        setStudent(userInfo);
+        setUser(data.user);
+        const studentData = await getUserStudent(data.user.id);
+        console.log(studentData);
+        setStudent(studentData.student);
+        console.log(studentData.student.id);
+        console.log(data.token.access)
         setToken(data.token.access);
-        router.push(`/dashboard_student/${user[0].id}`);
+        router.push(`/dashboard_student`);
         setFormData({
           name: "",
           mobile_number: "",

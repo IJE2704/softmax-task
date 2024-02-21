@@ -12,7 +12,7 @@ import { Context } from "@/provider/ContextProvider";
 import { getUserStudent } from "@/utilities/getStudent";
 
 const LoginForm = () => {
-  const {setUser,setToken,setStudent,setTokenInLocalStorage} = useContext(Context);
+  const {setUser,setToken,setStudent} = useContext(Context);
   const router = useRouter();
   const [formData, setFormData] = useState({
     mobile_number: "",
