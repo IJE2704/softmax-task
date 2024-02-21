@@ -5,7 +5,7 @@ import RequestCard from "./RequestCard";
 import { Context } from "@/provider/ContextProvider";
 
 const TeacherRequest = () => {
-  const { request } = useContext(Context);
+  const { request,setRequest } = useContext(Context);
   const [currentPage, setCurrentPage] = useState(1);
   const requestsPerPage = 16;
 
@@ -22,7 +22,13 @@ const TeacherRequest = () => {
   const prevPage = () => {
     setCurrentPage(currentPage - 1);
   };
-
+  useEffect(() => {
+    const getRequestData = async () => {
+      const data = await getTeacherRequest();
+      setRequest(data);
+    };
+    getRequestData();
+  }, []);
   return (
     <div className="flex flex-col justify-start items-start">
       <h1>Requests: {request.length}</h1>

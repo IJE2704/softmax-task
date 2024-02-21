@@ -34,13 +34,7 @@ const ContextProvider = ({ children }) => {
 
     console.log(user);
   },[user])
-  useEffect(() => {
-    const getRequestData = async () => {
-      const data = await getTeacherRequest();
-      setRequest(data);
-    };
-    getRequestData();
-  }, []);
+
   // useEffect(() => {
   //   const t = getTokenFromLocalStorage();
   //   // console.log(t);

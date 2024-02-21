@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -44,7 +45,7 @@ const Footer = () => {
           />
         </div>
         <button className='px-[24px] py-[10px] bg-[#20B486] hover:bg-[#16674d] rounded text-white'>Subscribe</button>
-      </div><button className='px-[24px] py-[10px] bg-[#E84C1F] hover:bg-[#16674d] rounded text-white'>Teacher Request</button>
+      </div><Link href='/teacher_registration_form'><button className='px-[24px] py-[10px] bg-[#E84C1F] hover:bg-[#16674d] rounded text-white'>Teacher Request</button></Link>
     </div>
   );
 };

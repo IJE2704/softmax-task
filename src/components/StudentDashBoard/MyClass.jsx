@@ -2,6 +2,7 @@
 import { Context } from '@/provider/ContextProvider';
 import { getEnrolledCourse } from '@/utilities/getEnrolledCourse';
 import React, { useContext, useEffect, useState } from 'react';
+import MyClassCard from './MyClassCard';
 
 const MyClass = () => {
   const [enrolledCourse,setEnrolledCourse] = useState([])
@@ -18,11 +19,11 @@ const MyClass = () => {
   return (
     <div>
       {enrolledCourse.length > 0 ? (
-        enrolledCourse.map(course => <h1 key={course.id}>{course.id}</h1>)
+      <h1>You have enrolled Courses : ${enrolledCourse.length}</h1>
       ) : (
         <h1>No enrolled courses found</h1>
       )}
-      <h1>enrolled</h1>
+
     </div>
   );
 };
