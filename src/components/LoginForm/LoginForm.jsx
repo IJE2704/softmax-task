@@ -52,7 +52,8 @@ const LoginForm = () => {
         setStudent(studentData.student);
         console.log(studentData.student.id);
         // console.log(data.token.access)
-        setTokenInLocalStorage(data.token.access);
+        setToken(data.token.access);
+        // setTokenInLocalStorage(data.token.access);
         // Redirect to the dashboard or handle authentication token
         router.push(`/dashboard_student/`);
       } else {

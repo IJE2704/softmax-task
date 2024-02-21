@@ -19,13 +19,13 @@ const ContextProvider = ({ children }) => {
   const [singleTeacher,setSingleTeacher] = useState({});
   const [teacherCreatedCourses, setTeacherCreatedCourses] = useState([]);
 
-  const setTokenInLocalStorage = (t) => {
-    localStorage.setItem("token", t);
-  };
+  // const setTokenInLocalStorage = (t) => {
+  //   localStorage.setItem("token", t);
+  // };
 
-  const getTokenFromLocalStorage = () => {
-    return localStorage.getItem("token");
-  };
+  // const getTokenFromLocalStorage = () => {
+  //   return localStorage.getItem("token");
+  // };
 
   useEffect(()=>{
 
@@ -38,11 +38,11 @@ const ContextProvider = ({ children }) => {
     };
     getRequestData();
   }, []);
-  useEffect(() => {
-    const t = getTokenFromLocalStorage();
-    // console.log(t);
-    setToken(t);
-  }, []);
+  // useEffect(() => {
+  //   const t = getTokenFromLocalStorage();
+  //   // console.log(t);
+  //   setToken(t);
+  // }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,7 +69,6 @@ const ContextProvider = ({ children }) => {
     student,
     courses,
     setCourses,
-    setTokenInLocalStorage,
     admin,
     setAdmin,
     request,

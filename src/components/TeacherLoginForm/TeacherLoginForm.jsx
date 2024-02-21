@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 
 const TeacherLoginForm = () => {
-  const {setTokenInLocalStorage,setUser} = useContext(Context);
+  const {setToken,setUser} = useContext(Context);
   const router = useRouter();
   const [formData, setFormData] = useState({
     mobile_number: "",
@@ -43,8 +43,13 @@ const TeacherLoginForm = () => {
           icon: "success",
         });
         // console.log(data.token.access)
-        setTokenInLocalStorage(data.token.access);
         setUser(data.user);
+        const studentData = await getUserStudent(data.user.id);
+        console.log(studentData);
+        setStudent(studentData.student);
+        console.log(studentData.student.id);
+        // console.log(data.token.access)
+        setToken(data.token.access);
         // Redirect to the dashboard or handle authentication token
         router.push(`/dashboard_teacher`);
       } else {
