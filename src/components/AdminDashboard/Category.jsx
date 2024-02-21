@@ -112,7 +112,7 @@ const Category = () => {
         <h1 className='text-3xl font-bold'>Create Category</h1>
       </div>
       <Link href="/all_category">
-      <div className='w-1/2 bg-[#B2C9F6] rounded mt-10 shadow-xl h-[300px] flex justify-center items-center hover:scale-110 mx-20'>
+      <div className='w-1/2 bg-[#B2C9F6] rounded mt-10 shadow-xl h-[300px] flex justify-center items-center hover:scale-110 px-20'>
         <h1 className='text-3xl font-bold'>See All Category</h1>
       </div></Link>
       <Modal isOpen={isModalOpen} onClose={closeModal} />

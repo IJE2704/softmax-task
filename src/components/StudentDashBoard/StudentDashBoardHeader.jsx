@@ -35,7 +35,7 @@ const StudentDashBoardHeader = () => {
   return (
     <div className="w-full h-full bg-slate-100 shadow-xl rounded-bl-lg flex justify-between items-center px-5 relative">
       <div>
-        <h1 className="text-xl lg:text-4xl font-bold">{selectedMenu}</h1>
+        <h1 className="text-2xl 2xl:text-4xl font-bold">{selectedMenu}</h1>
       </div>
       <div>
         <input

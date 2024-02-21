@@ -58,12 +58,12 @@ const CreateCourse = () => {
 
   return (
     <div>
-      <div className={`${allCategory.length>0?'grid grid-cols-4 gap-2':'none'}`}>
+      <div className={`${allCategory.length>0?'grid grid-cols-5 gap-2':'none'}`}>
           {allCategory.length > 0 ? (
             allCategory.map(category => (
               <div key={category.id}>
-                <h1 className="text-center">{category.id}</h1>
-                <h1 className="text-center">{category.name}</h1>
+                <h1 className="text-center text-[10px] 2xl:text-base">{category.id}</h1>
+                <h1 className="text-center text-[10px] 2xl:text-base">{category.name}</h1>
               </div>
             ))
           ) : (

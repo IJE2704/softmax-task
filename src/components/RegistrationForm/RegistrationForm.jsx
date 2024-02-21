@@ -97,7 +97,7 @@ const RegistrationForm = () => {
           </div>
         </div>
         <div className="lg:w-1/2 px-8 py-6 bg-white shadow-md rounded-md">
-          <h2 className="text-2xl lg:text-6xl text-center font-semibold mb-4">
+          <h2 className="text-4xl 2xl:text-6xl text-center font-semibold mb-4">
             Get Started
           </h2>
           <p className="text-center mb-4">

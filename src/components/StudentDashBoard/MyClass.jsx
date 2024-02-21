@@ -19,7 +19,7 @@ const MyClass = () => {
   return (
     <div>
       {enrolledCourse.length > 0 ? (
-      <h1>You have enrolled Courses : ${enrolledCourse.length}</h1>
+      <h1>You have enrolled Courses : {enrolledCourse.length}</h1>
       ) : (
         <h1>No enrolled courses found</h1>
       )}

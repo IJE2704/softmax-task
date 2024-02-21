@@ -13,7 +13,7 @@ const Header = () => {
         <p className="text-[#20B486] text-sm md:text-lg lg:text-2xl font-semibold">
           START TO SUCCESS
         </p>
-        <h2 className="text-[#06241B] text-semibold text-2xl md:text-4xl lg:text-[56px] text-wrap lg:leading-[72px]">
+        <h2 className="text-[#06241B] text-semibold text-2xl md:text-4xl lg:text-4xl 2xl:text-[56px] text-wrap lg:leading-[72px]">
           Access To{" "}
           <span className="text-[#20B486] border-[#FFC27A] border-b-4">
             500+

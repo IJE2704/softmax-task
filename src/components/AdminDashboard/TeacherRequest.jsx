@@ -32,7 +32,7 @@ const TeacherRequest = () => {
   return (
     <div className="flex flex-col justify-start items-start">
       <h1>Requests: {request.length}</h1>
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-5 2xl:grid-cols-4 gap-5">
         {currentRequests.map((req) => (
           <RequestCard key={req.id} req={req}></RequestCard>
         ))}

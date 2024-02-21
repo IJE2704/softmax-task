@@ -54,7 +54,7 @@ const AdminForm = () => {
   };
   return (
     <div className="lg:w-[1100px] h-screen mx-4 lg:mx-auto flex justify-center items-center bg-[#b7dfc9] px-5">
-      <div className="w-full h-1/2   bg-white rounded">
+      <div className="w-full h-2/3 2xl:h-1/2   bg-white rounded">
         <div className=" flex justify-between items-start mx-4 mt-4">
           <Link href="/">
             <Image src={logo} width={50} height={50} alt="logo"></Image>
@@ -65,10 +65,10 @@ const AdminForm = () => {
             </p>
           </Link>
         </div>
-        <h2 className="text-2xl lg:text-6xl text-center font-semibold mb-4 mt-10">
+        <h2 className="text-3xl 2xl:text-6xl text-center font-semibold mb-4  2xl:mt-10">
           Log in
         </h2>
-        <div className="lg:w-1/2 mx-auto mt-10">
+        <div className="lg:w-1/2 mx-auto mt-4 2xl:mt-10">
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label

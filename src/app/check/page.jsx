@@ -18,10 +18,10 @@ const CheckPage = () => {
             </p>
           </Link>
         </div>
-        <h2 className="text-2xl lg:text-6xl text-center font-semibold mb-4 mt-10">
+        <h2 className="text-4xl 2xl:text-6xl text-center font-semibold mb-0 2xl:mb-4 mt-10">
           Log in as 
         </h2>
-        <div className="flex justify-center items-center gap-2 mx-4 mt-20 lg:mt-28 mb-10">
+        <div className="flex justify-center items-center gap-2 mx-4 mt-20 2xl:mt-28 mb-10">
           <Link href='login'><button
             type="submit"
             className="w-full text-black hover:text-white hover:bg-[#20B486] py-2 px-4 rounded-md  transition duration-300 border-[1px]"

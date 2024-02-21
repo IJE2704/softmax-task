@@ -36,7 +36,7 @@ const AdminDashboardHeader = () => {
   return (
     <div className="w-full h-full bg-[#ECC091] shadow-xl rounded-bl-lg flex justify-between items-center px-5 relative">
       <div>
-        <h1 className="text-xl lg:text-4xl font-bold">{selectedAdminMenu}</h1>
+        <h1 className="text-xl 2xl:text-4xl font-bold">{selectedAdminMenu}</h1>
       </div>
       <div>
         <input

@@ -11,13 +11,13 @@ const Course = () => {
   return (
     <div className="lg:w-[1100px] mx-auto py-5 lg:py-20 flex flex-col lg:flex-row justify-between items-center gap-0 lg:gap-10">
       <div>
-        <h1 className="text-center md:text-start text-2xl lg:text-6xl font-semibol text-black">
+        <h1 className="text-center md:text-start text-4xl 2xl:text-6xl font-semibol text-black">
           Most
         </h1>
-        <h1 className="text-center md:text-start text-2xl lg:text-6xl font-semibol text-[#20B486] ">
+        <h1 className="text-center md:text-start text-4xl 2xl:text-6xl font-semibol text-[#20B486] ">
           <span className="border-[#FFC27A] border-b-4">Popular</span>
         </h1>
-        <h1 className="text-center md:text-start text-2xl lg:text-6xl font-semibol text-[#20B486]">
+        <h1 className="text-center md:text-start text-4xl 2xl:text-6xl font-semibol text-[#20B486]">
           Course
         </h1>
       </div>
