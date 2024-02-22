@@ -9,7 +9,21 @@ const AllCategory = () => {
   const [allCategory,setAllCategory] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const categoryPerPage = 16;
+  const [categoryPerPage,setCategoryPerPage] = useState(16);
+  useEffect(()=>{
+    const handleResize =()=>{
+      if(window.innerWidth<1536)
+      {
+        setCategoryPerPage(12);
+      }
+      else{
+        setCategoryPerPage(16);
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return ()=> window.removeEventListener('resize',handleResize);
+  },[])
 
   useEffect(()=>{
     const getData = async()=>{

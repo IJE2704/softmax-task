@@ -7,8 +7,21 @@ import { Context } from "@/provider/ContextProvider";
 const TeacherRequest = () => {
   const { request,setRequest } = useContext(Context);
   const [currentPage, setCurrentPage] = useState(1);
-  const requestsPerPage = 16;
-
+  const [requestsPerPage,setrequestsPerPage] = useState(20);
+  useEffect(()=>{
+    const handleResize =()=>{
+      if(window.innerWidth<1536)
+      {
+        setrequestsPerPage(15);
+      }
+      else{
+        setrequestsPerPage(20);
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return ()=> window.removeEventListener('resize',handleResize);
+  },[])
   const indexOfLastRequest = currentPage * requestsPerPage;
   const indexOfFirstRequest = indexOfLastRequest - requestsPerPage;
   const currentRequests = request.slice(indexOfFirstRequest, indexOfLastRequest);

@@ -33,8 +33,8 @@ const handleApprov = async ()=>{
   return (
     <div className="bg-[#B2CAF7] flex flex-col 2xl:flex-row justify-center items-center py-5 px-2 2xl:py-10 2xl:px-5 rounded-md gap-4">
       <div className="flex flex-col justify-start items-start">
-        <h1 className="text-base 2xl:text-xl">{req.fullName}</h1>
-        <p>{req.email}</p>
+        <h1 className="text-sm text-wrap 2xl:text-xl text-center">{req.fullName}</h1>
+        <p className="text-sm 2xl:text-base">{req.email}</p>
       </div>
       <div>
         <button
