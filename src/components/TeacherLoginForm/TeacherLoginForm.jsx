@@ -8,6 +8,7 @@ import { CiHome } from "react-icons/ci";
 import { Context } from "@/provider/ContextProvider";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import { getSingleTeacher } from "@/utilities/getSingleTeacher";
 
 const TeacherLoginForm = () => {
   const {setToken,setUser} = useContext(Context);
@@ -39,6 +40,18 @@ const TeacherLoginForm = () => {
       const data = await response.json();
       flag=2;
       console.log(data)
+      const teacher = await getSingleTeacher(data?.user?.id, data?.token?.access);
+      console.log(teacher)
+      console.log(teacher.teacher.approved_as_teacher)
+      if(!teacher.teacher.approved_as_teacher){
+        console.log('1')
+        Swal.fire({
+          title: "Try Again!",
+          text: "You are not approved as a teacher.",
+          icon: "error",
+        });
+        router.push('/');
+      }
       if (response.ok) {
         Swal.fire({
           title: "Congratulation!",

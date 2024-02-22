@@ -17,12 +17,13 @@ const AdminForm = () => {
   });
 
   const handleChange = (e) => {
-    let flag=1;
+    
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
+    let flag=1;
     e.preventDefault();
     try {
       const response = await fetch("https://softmaxshop.com/user/login/", {

@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 
 const CreateCourse = () => {
   const { token, singleTeacher, user, allCategory } = useContext(Context);
+  console.log(singleTeacher)
   const teacherId = [singleTeacher.id]
   const [formData, setFormData] = useState({
     category: "",
